@@ -1,3 +1,108 @@
-body {
-    background: red;
+@import "partials/setup";
+@import "partials/typography";
+@import "partials/utils"; 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+//------------------------//
+//  General Styling        
+//------------------------//
+
+.wrapper {
+    margin: auto 0;
+    max-width: 1280px;
+}
+
+section {
+    padding: 50px;
+    border: 1px solid #000;
+}
+
+img {
+    max-width: 100%;
+}
+
+//------------------------//
+//  Header Styling        
+//------------------------//
+
+header {
+    height: 100vh;
+    @include flex(auto, center, center);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 1)), url();
+    background-size: cover;
+}
+
+
+//------------------------//
+//  About Styling        
+//------------------------//
+
+section.about {
+    @include flex(auto, center, center, wrap);
+    .aboutMe {
+        width: 70%;
+        padding: 50px;
+    }
+    figure {
+        width: 30%;
+        padding: 30px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.288);
+    }
+}
+
+//------------------------//
+//  Skills Styling        
+//------------------------//
+
+section.skills {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    .container {
+        @include flex(auto, center, center, wrap);
+    }
+    figure {
+        @include flex(auto, center, center);
+        display: inline-block;
+        margin: 0 30px;
+        margin-top: 30px;
+        i {
+            font-size: 8rem;
+        }
+        figcaption {
+            font-size: 1.2rem; 
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            text-transform: uppercase;
+         }
+    }
+}
+
+//------------------------//
+//  Skills Styling        
+//------------------------//
+
+section.portfolio {
+    @include flex(colum, center, center, wrap);
+    h3 {
+        width: 100%;
+    }
+    .project {
+        @include flex(auto, center, flex-start, wrap);
+        margin-bottom: 60px;
+    }
+    .description {
+        width: 50%;
+    }
+    .preview {
+        width: 50%;
+    }
 }
