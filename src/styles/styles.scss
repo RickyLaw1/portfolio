@@ -1,6 +1,6 @@
 @import "partials/setup";
-@import "partials/typography";
 @import "partials/utils"; 
+@import "partials/typography";
 
 * {
     margin: 0;
@@ -21,12 +21,12 @@ html {
 }
 
 section {
-    padding: 50px;
-    border: 1px solid #000;
+    padding: 150px 50px;
 }
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 //------------------------//
@@ -34,10 +34,110 @@ img {
 //------------------------//
 
 header {
+    @include flex(column, center, center);
+    filter: saturate(30%);
     height: 100vh;
-    @include flex(auto, center, center);
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 1)), url();
     background-size: cover;
+    border-radius: 15%;
+    padding: 5%;
+    // background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../assets/hero.jpg);
+
+    .title {
+        background-color: rgba(0, 98, 255, 0.842);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 3px 3px 0px 0 rgb(53, 53, 53);
+    }
+    h3 {
+        color: white;
+        font-weight: 400;
+        font-size: 3rem;
+        // text-shadow: 1px 1px 1px #000;
+    }
+    button {
+        font-size: 3rem;        
+        color: $primary;
+        text-transform: uppercase;
+        border-radius: 20px;
+        margin-top: 20px;
+        transition: 0.3s;
+        width: 250px;
+        height: 70px;
+        position: relative;
+        overflow: hidden;
+        span {
+            font-family: 'Audiowide', cursive;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.3s;
+        }
+        .arrow, .wrench, .crazy8s, .hoverEffect {
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(0);
+            top: 50%;
+            left: -50%;
+            width: 30px;
+            transition: 0.3s;
+        }
+        .crazy8s {
+            transform: translate(-50%, -50%) rotateY(0);
+        }
+        .hoverEffect {
+            transform: translate(-50%, -50%) rotateY(0);
+            width: 10px;
+        }
+        &:hover {
+            // background-color: $secondary;
+            // color: white;
+            & span {
+                left: 150%;
+            }
+            & .arrow {
+                left: 85%;
+                animation: rotate 3s infinite linear;
+            }
+            & .wrench {
+                left: 65%;
+                animation: rotate 3s infinite linear;
+            }
+            & .crazy8s {
+                left: 35%;
+                animation: rotateY 3s infinite linear;
+            }
+            & .hoverEffect {
+                left: 15%;
+                animation: rotateY 3s infinite linear;
+            }
+        }
+    }
+
+    @keyframes rotate {
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+    @keyframes rotateY {
+        to {
+            transform: translate(-50%, -50%) rotateY(360deg);
+        }
+    }
+    .gameScreen {
+        position: absolute;
+        z-index: -1;
+        background: white;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-gap: 10px;
+        overflow: hidden;
+        .grid {
+            background-color: rgb(235, 238, 241);
+            border-radius: 10px;
+        }
+    }
 }
 
 
@@ -46,15 +146,38 @@ header {
 //------------------------//
 
 section.about {
-    @include flex(auto, center, center, wrap);
+    @include flex(column, center, center);
+    position: relative;
+    .wrapper {
+        @include flex(auto, center, flex-start, wrap);
+    }
+
+    h2 {
+        color: $primary;
+        position: absolute;
+        top: -115px;
+        left: 0;
+    }
     .aboutMe {
-        width: 70%;
-        padding: 50px;
+        width: 50%;
+        background-color: #e3edff;
+        padding: 30px 50px;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        position: relative;
+        p {
+            margin-bottom: 30px;
+            color: $primary;
+        }
     }
     figure {
         width: 30%;
-        padding: 30px;
-        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.288);
+        border-radius: 50%;
+        margin-top: 30px;
+        margin-right: 50px;
+        img {
+            border-bottom-right-radius: 50px;
+        }
     }
 }
 
@@ -63,8 +186,15 @@ section.about {
 //------------------------//
 
 section.skills {
-    background-color: rgb(255, 255, 255);
+    background-color: $secondary;
     text-align: center;
+    // border-radius: 5%;
+    @include flex(column, center, center, wrap);
+
+    h2 {
+        color: white;
+        margin-bottom: 30px;
+    }
     .container {
         @include flex(auto, center, center, wrap);
     }
@@ -74,6 +204,7 @@ section.skills {
         margin: 0 30px;
         margin-top: 30px;
         i {
+            color: white;
             font-size: 8rem;
         }
         figcaption {
@@ -82,27 +213,97 @@ section.skills {
             letter-spacing: 2px;
             margin-top: 15px;
             text-transform: uppercase;
+            color: white;
          }
     }
 }
 
 //------------------------//
-//  Skills Styling        
+//  Portfolio Styling        
 //------------------------//
 
 section.portfolio {
-    @include flex(colum, center, center, wrap);
+    background: url("../../assets/pattern.PNG");
+    // background-color: $accent;
+    display: flex;
+    h2 {
+        margin-bottom: 100px;
+        color: $primary;   
+    }
+    @include flex(column, center, center, wrap);
     h3 {
-        width: 100%;
+        width: 100%;     
+        color: $primary;   
     }
     .project {
-        @include flex(auto, center, flex-start, wrap);
-        margin-bottom: 60px;
+        @include flex(auto, center, center, wrap);
+        border: 25px solid $secondary;
+        margin-bottom: 150px;
+        background-color: #12223cd7;
+        padding: 50px;
+        padding-bottom: 70px;
+        padding-right: 70px;
+        border-radius: 20px;
     }
     .description {
         width: 50%;
+        background-color: #e3edff;
+        
+        padding: 50px 60px;
+        
+        &:nth-child(even) {
+            box-shadow: 30px 30px 0px $secondary;
+            border-top-right-radius: 70px;
+            border-bottom-left-radius: 70px;
+        }
+        &:nth-child(odd) {
+            box-shadow: -40px 30px 0px $secondary;
+            border-top-left-radius: 70px;
+            border-bottom-right-radius: 70px;
+            margin-left: 30px;
+        }
+        p {
+            color: $primary;
+            line-height: 1.5;
+            margin-bottom: 50px;
+        }
+        .tool {
+            font-size: 2rem;
+            color: $primary;
+            // border: 1px solid $primary;
+            background-color: white;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 10px;
+            line-height: 1;
+            margin-right: 10px;
+            box-shadow: 1px 1px 0px $secondary;
+        }
+        .links {
+            display: flex;
+            h4 {
+                padding: 10px;
+                margin-right: 20px;
+                border-radius: 10px;
+                border: 1px solid #000;
+                box-shadow: 3px 3px 0px 0 rgb(53, 53, 53);
+                // background-color: $accent;
+            }
+            a {
+                font-family: inherit;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
     }
     .preview {
-        width: 50%;
+        width: calc(50% - 100px);
+        &:nth-child(even) {
+            margin-left: 50px;
+        }
+        &:nth-child(odd) {
+            margin-right: 50px;
+         
+        }
     }
 }

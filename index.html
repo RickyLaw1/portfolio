@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Open+Sans:400,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link rel="stylesheet" href="public/styles/style.css">
     <title>Ricky Law - Front-End Web Developer</title>
 </head>
 <body>
     <header>
-        <h1>Ricky Law</h1>
+        <div class="title">
+            <h1>Ricky Law</h1>
+            <h3>Front-End Web Developer</h3>
+        </div>
+        <button>
+            <span>Projects</span>
+            <img src="assets/arrow-alt-circle-up-regular.svg" alt="" class="arrow">
+            <img src="assets/wrench.png" alt="" class="wrench">
+            <img src="assets/002-hearts8.png" alt="" class="crazy8s">
+            <img src="assets/mouse-pointer-solid.svg" alt="" class="hoverEffect">
+        </button>
+        <div class="gameScreen">
+        </div>
     </header>
-
-    <section class="about wrapper">
-        <figure>
-            <img src="assets/2018-summer-bootcamp-ricky-law-1.jpg" alt="">
-        </figure>
-        <div class="aboutMe">
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, incidunt magnam id aperiam corrupti tenetur reiciendis? Tempore ab, qui, quo voluptatem porro pariatur totam adipisci ullam ipsa consectetur vero iure?</p>
+    
+    
+    
+    <section class="about">
+        <div class="wrapper">
+                <figure>
+                        <img src="assets/headshot2.png" alt="">
+                </figure>
+            <div class="aboutMe">
+                <h2>about</h2>
+                <p>Hi I'm Ricky, a Front-End Developer based in Toronto with an education in engineering. I love the challenge of solving difficult problems. My goal is to combine creativity and practicality to build memorable experiences.</p>
+                <p>Outside of programming I play badminton as a fun way to exercise. To relax I enjoy listening to podcasts and playing tetris (accepting any and all challenges).  </p>
+                <p> I believe in aiming high, incremental progression, and always being a student.</p>
+            </div>
+            
         </div>
     </section>
 
@@ -76,73 +95,121 @@
 
     <section class="portfolio">
         <h2>Portfolio</h2>
-        <div class="project project1">
-            <h3>Arrows</h3>
-            <div class="preview">
-                <figure>
-                    <img src="assets/macbook.jpg" alt="">
-                </figure>
-            </div>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
-                </p>
-            </div>
+        <div class="wrapper">
+        	<div class="project project1">
+        	    <div class="preview">
+        	        <figure>
+        	            <img src="assets/arrows_macbook.png" alt="">
+        	        </figure>
+        	    </div>
+        	    <div class="description">
+                        <h3>Arrows</h3>
+        	        <p>
+        	            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
+                    </p>
+                    <div class="builtWith">
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                    </div>
+                    <div class="links">
+                        <h4><a href="">Live</a></h4>
+                        <h4><a href="">Github</a></h4>
+                    </div>
+        	    </div>
+        	</div>
+        	<div class="project project2">
+                <div class="description">
+                    <h3>Robo Trivia</h3>
+        	        <p>
+        	            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
+                    </p>
+                    <div class="builtWith">
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                        </div>
+        	    </div>
+        	    <div class="preview">
+        	        <figure>
+        	            <img src="assets/robo_trivia_macbook.png" alt="">
+        	        </figure>
+        	    </div>
+        	</div>
+        	<div class="project project3">
+                <div class="preview">
+                    <figure>
+                        <img src="assets/crazy8s_macbook.png" alt="">
+        	        </figure>
+        	    </div>
+        	    <div class="description">
+                    <h3>Crazy 8's</h3>
+        	        <p>
+        	            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
+                    </p>
+                    <div class="builtWith">
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                        </div>
+        	    </div>
+        	</div>
+        	<div class="project project4">
+                <div class="description">
+                    <h3>Hover Effect</h3>
+                    <p>
+        	            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
+                    </p>
+                    <div class="builtWith">
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                            <div class="tool">React</div>
+                        </div>
+        	    </div>
+        	    <div class="preview">
+        	        <figure>
+        	            <img src="assets/hover_effect_macbook.png" alt="">
+        	        </figure>
+        	    </div>
+        	</div>
+        	<div class="project project5">
+                <div class="preview">
+                    <figure>
+                        <img src="assets/psd_conversion_macbook.png" alt="">
+        	        </figure>
+        	    </div>
+        	    <div class="description">
+                        <h3>PSD Conversion</h3>
+        	        <p>
+        	            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
+                    </p>
+                    <div class="builtWith">
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                        <div class="tool">React</div>
+                    </div>
+        	    </div>
+        	</div>
         </div>
-        <div class="project project2">
-            <h3>Robo Trivia</h3>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
-                </p>
-            </div>
-            <div class="preview">
-                <figure>
-                    <img src="assets/macbook.jpg" alt="">
-                </figure>
-            </div>
-        </div>
-        <div class="project project3">
-            <h3>Crazy 8's</h3>
-            <div class="preview">
-                <figure>
-                    <img src="assets/macbook.jpg" alt="">
-                </figure>
-            </div>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
-                </p>
-            </div>
-        </div>
-        <div class="project project4">
-            <h3>Hover Effect</h3>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
-                </p>
-            </div>
-            <div class="preview">
-                <figure>
-                    <img src="assets/macbook.jpg" alt="">
-                </figure>
-            </div>
-        </div>
-        <div class="project project5">
-            <h3>PSD Conversion</h3>
-            <div class="preview">
-                <figure>
-                    <img src="assets/macbook.jpg" alt="">
-                </figure>
-            </div>
-            <div class="description">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quasi sit eligendi accusantium beatae, velit veritatis quae officiis! Deleniti dolor facere fugit sunt officia ratione sequi quae quasi eveniet excepturi?
-                </p>
-            </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <div class="email">
+            <h3>Email: ricky@rickylaw.ca</h3>
         </div>
     </section>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="public/scripts/app.js"></script>
 </body>
 </html>
