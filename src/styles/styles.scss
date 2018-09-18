@@ -66,64 +66,34 @@ header {
         height: 70px;
         position: relative;
         overflow: hidden;
-        span {
+        h3 {
             font-family: 'Audiowide', cursive;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateY(0);
             transition: 0.3s;
-        }
-        .arrow, .wrench, .crazy8s, .hoverEffect {
-            position: absolute;
-            transform: translate(-50%, -50%) rotate(0);
-            top: 50%;
-            left: -50%;
-            width: 30px;
-            transition: 0.3s;
-        }
-        .crazy8s {
-            transform: translate(-50%, -50%) rotateY(0);
-        }
-        .hoverEffect {
-            transform: translate(-50%, -50%) rotateY(0);
-            width: 10px;
+            color: $primary;
         }
         &:hover {
-            // background-color: $secondary;
-            // color: white;
-            & span {
-                left: 150%;
-            }
-            & .arrow {
-                left: 85%;
-                animation: rotate 3s infinite linear;
-            }
-            & .wrench {
-                left: 65%;
-                animation: rotate 3s infinite linear;
-            }
-            & .crazy8s {
-                left: 35%;
-                animation: rotateY 3s infinite linear;
-            }
-            & .hoverEffect {
-                left: 15%;
-                animation: rotateY 3s infinite linear;
+            background-color: $accent;
+            border: 1px solid white;
+            & h3 {
+                animation: hover 1s infinite;
+                color: white;
             }
         }
     }
 
-    @keyframes rotate {
-        to {
-            transform: translate(-50%, -50%) rotate(360deg);
+    @keyframes hover {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-2px);
+        }
+        100% {
+            transform: translateY(0);
         }
     }
-    @keyframes rotateY {
-        to {
-            transform: translate(-50%, -50%) rotateY(360deg);
-        }
-    }
+
     .gameScreen {
         position: absolute;
         z-index: -1;
@@ -179,6 +149,24 @@ section.about {
             border-bottom-right-radius: 50px;
         }
     }
+}
+
+@media (max-width: 611px) {
+    section.about {
+        padding-left: 30px;
+        padding-right: 30px;
+        figure {
+            width: 95%;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .aboutMe {
+            width: 95%;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+
 }
 
 //------------------------//
@@ -253,9 +241,7 @@ section.portfolio {
         padding-bottom: 50px;
         // padding-right: 70px;
         border-radius: 20px;
-        &:nth-child(even) {
-            // flex-direction: column-reverse;
-        }
+        
     }
     .description {
         background-color: #e3edff;
@@ -268,10 +254,10 @@ section.portfolio {
             border-bottom-left-radius: 70px;
         }
         &:nth-child(odd) {
-            box-shadow: -40px 30px 0px #08152D;
+            box-shadow: -30px 30px 0px #08152D;
             border-top-left-radius: 70px;
             border-bottom-right-radius: 70px;
-            margin-left: 30px;
+            // margin-left: 30px;
         }
         p {
             color: $primary;
@@ -318,15 +304,91 @@ section.portfolio {
     }
     .preview {
         width: 455px;
+        position: relative;
+        overflow: hidden;
+        .staticImage {
+            visibility: hidden;
+            position: relative;
+        }
+        .macBook {
+            position: absolute;
+            z-index: 10;
+            top: 0;
+        }
+        .gif {
+            position: absolute;
+            width: 76%;
+            height: 250px;
+            z-index: 1;
+            top: 17px;
+            left: 58px;
+            // display: none;
+        }
         &:nth-child(even) {
             margin-left: 50px;
         }
         &:nth-child(odd) {
             margin-right: 50px;
-         
         }
     }
 }
+
+@media (max-width: 1280px) {
+    section.portfolio  {
+        .project:nth-child(even) {
+            flex-direction: column-reverse;
+        }
+    }
+}
+@media (max-width: 611px) {
+    section.portfolio  {
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        .project {
+            border: 5px solid #B4C5E4;
+            position: relative;
+            margin-top: 400px;
+            &:first-child {
+                margin-top: 250px;
+            }
+        }
+        .preview {
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+            width: 100%;
+            margin-bottom: 20px;
+            .gif {
+                position: absolute;
+                width: 80%;
+                height: 350px;
+                z-index: 1;
+                top: 17px;
+                left: 58px;
+                // display: none;
+            }
+            &:nth-child(odd) {
+                margin-right: 0;
+            }
+            &:nth-child(even) {
+                margin-left: 0;
+            }
+        }
+        .description {
+           padding: 30px;
+           padding-bottom: 40px;
+           &:nth-child(odd), &:nth-child(even) {
+               box-shadow: none;
+           }
+           box-shadow: none;
+            .links a {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
 
 //------------------------//
 //  Contact Styling        
@@ -334,12 +396,6 @@ section.portfolio {
 
 section.contact {
     @include flex(column, center, center);
-    // h3 {
-    //     font-family: 'Roboto', sans-serif;
-    //     color: $primary;
-    //     font-size: 3rem;
-    //     font-weight: 400;
-    // }
     a {
         text-decoration: none;
         color: $primary;

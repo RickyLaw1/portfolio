@@ -112,7 +112,7 @@ app.generateGrid = () => {
     const gridHeight = gridWidth;
 
     const numCols = Math.floor(winWidth / gridWidth);
-    const numRows = Math.floor(winHeight / gridHeight);
+    const numRows = Math.floor(winHeight / gridHeight) - 1;
 
     app.grids = numCols * numRows;
     app.numCols = numCols;
