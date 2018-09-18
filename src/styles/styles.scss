@@ -159,7 +159,7 @@ section.about {
         left: 0;
     }
     .aboutMe {
-        width: 50%;
+        max-width: 500px;
         background-color: #e3edff;
         padding: 30px 50px;
         border-top-left-radius: 50px;
@@ -171,7 +171,7 @@ section.about {
         }
     }
     figure {
-        width: 30%;
+        width: 400px;
         border-radius: 50%;
         margin-top: 30px;
         margin-right: 50px;
@@ -223,41 +223,52 @@ section.skills {
 //------------------------//
 
 section.portfolio {
+    @include flex(column, center, center, wrap);
     background: url("../../assets/pattern.PNG");
-    // background-color: $accent;
     display: flex;
     h2 {
         margin-bottom: 100px;
         color: $primary;   
     }
-    @include flex(column, center, center, wrap);
     h3 {
         width: 100%;     
-        color: $primary;   
+        color: $primary;
+        position: relative;
+        margin-bottom: 20px;
+        span {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 70px;
+            height: 5px;
+            background-color: $accent;
+        }   
     }
     .project {
         @include flex(auto, center, center, wrap);
         border: 25px solid $secondary;
         margin-bottom: 150px;
         background-color: #12223cd7;
-        padding: 50px;
-        padding-bottom: 70px;
-        padding-right: 70px;
+        padding: 30px;
+        padding-bottom: 50px;
+        // padding-right: 70px;
         border-radius: 20px;
+        &:nth-child(even) {
+            // flex-direction: column-reverse;
+        }
     }
     .description {
-        width: 50%;
         background-color: #e3edff;
-        
-        padding: 50px 60px;
+        max-width: 550px;
+        padding: 20px 40px 30px 60px ;
         
         &:nth-child(even) {
-            box-shadow: 30px 30px 0px $secondary;
+            box-shadow: 30px 30px 0px #08152D;
             border-top-right-radius: 70px;
             border-bottom-left-radius: 70px;
         }
         &:nth-child(odd) {
-            box-shadow: -40px 30px 0px $secondary;
+            box-shadow: -40px 30px 0px #08152D;
             border-top-left-radius: 70px;
             border-bottom-right-radius: 70px;
             margin-left: 30px;
@@ -265,7 +276,7 @@ section.portfolio {
         p {
             color: $primary;
             line-height: 1.5;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
         .tool {
             font-size: 2rem;
@@ -277,33 +288,76 @@ section.portfolio {
             padding: 10px;
             line-height: 1;
             margin-right: 10px;
+            margin-bottom: 10px;
             box-shadow: 1px 1px 0px $secondary;
         }
         .links {
             display: flex;
             h4 {
-                padding: 10px;
-                margin-right: 20px;
-                border-radius: 10px;
-                border: 1px solid #000;
-                box-shadow: 3px 3px 0px 0 rgb(53, 53, 53);
-                // background-color: $accent;
+                margin: 0;
+                color: inherit;
             }
             a {
+                color: $primary;
+                padding: 10px;
+                margin-top: 20px;
+                margin-right: 20px;
+                border-radius: 10px;
                 font-family: inherit;
+                border: 1px solid $primary;
+                box-shadow: 3px 3px 0px 0 rgb(53, 53, 53);
                 text-decoration: none;
-                color: inherit;
+                transition: 0.3s;
+                &:hover {
+                    background-color: $primary;
+                    border: 1px solid white;
+                    color: white;
+                }
             }
         }
     }
     .preview {
-        width: calc(50% - 100px);
+        width: 455px;
         &:nth-child(even) {
             margin-left: 50px;
         }
         &:nth-child(odd) {
             margin-right: 50px;
          
+        }
+    }
+}
+
+//------------------------//
+//  Contact Styling        
+//------------------------//
+
+section.contact {
+    @include flex(column, center, center);
+    // h3 {
+    //     font-family: 'Roboto', sans-serif;
+    //     color: $primary;
+    //     font-size: 3rem;
+    //     font-weight: 400;
+    // }
+    a {
+        text-decoration: none;
+        color: $primary;
+    }
+    .email p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3.5rem;
+        margin-left: 10px;
+    }
+    .social {
+        svg {
+            font-size: 5.3rem;
+            color: $primary;
+            &:hover {
+                color: $accent;
+            }
         }
     }
 }

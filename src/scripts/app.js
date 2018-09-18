@@ -25,10 +25,6 @@ app.windowResize = () => {
         app.stacked = new Set();
         app.unStacked = [];
     
-        let color1 = "#e3edff";
-        let color2 = "#e3edff78"
-    
-    
         app.ranGrid();
     })
 }
