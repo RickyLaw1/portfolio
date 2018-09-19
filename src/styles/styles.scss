@@ -44,10 +44,12 @@ header {
 
     .title {
         background-color: rgba(0, 98, 255, 0.842);
-        border-radius: 20px;
-        padding: 20px;
+        // border-radius: 20px;
+        padding: 15px;
         text-align: center;
         box-shadow: 3px 3px 0px 0 rgb(53, 53, 53);
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
     }
     h3 {
         color: white;
@@ -106,6 +108,17 @@ header {
         .grid {
             background-color: rgb(235, 238, 241);
             border-radius: 10px;
+        }
+    }
+}
+
+@media (max-width: 620px) {
+    header {
+        h1 {
+            font-size: 5rem;
+        }
+        h3 {
+            font-size: 2.3rem;
         }
     }
 }
@@ -206,6 +219,16 @@ section.skills {
     }
 }
 
+@media (max-width: 620px) {
+    section.skills {
+        padding-left: 0;
+        padding-right: 0;
+        figure i {
+            font-size: 6rem;
+        }
+    }
+}
+
 //------------------------//
 //  Portfolio Styling        
 //------------------------//
@@ -216,7 +239,11 @@ section.portfolio {
     display: flex;
     h2 {
         margin-bottom: 100px;
-        color: $primary;   
+        color: white;
+        background-color: #12223cd7;
+        padding: 0 20px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;   
     }
     h3 {
         width: 100%;     
@@ -229,7 +256,7 @@ section.portfolio {
             left: 0;
             width: 70px;
             height: 5px;
-            background-color: $accent;
+            background-color: #10408dcc;
         }   
     }
     .project {
@@ -307,7 +334,7 @@ section.portfolio {
         position: relative;
         overflow: hidden;
         .staticImage {
-            visibility: hidden;
+            // visibility: hidden;
             position: relative;
         }
         .macBook {
@@ -340,7 +367,13 @@ section.portfolio {
         }
     }
 }
-@media (max-width: 611px) {
+@media (max-width: 820px) {
+    section.portfolio  {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+@media (max-width: 660px) {
     section.portfolio  {
         padding-left: 10px;
         padding-right: 10px;
@@ -349,6 +382,7 @@ section.portfolio {
             border: 5px solid #B4C5E4;
             position: relative;
             margin-top: 400px;
+            padding: 10px;
             &:first-child {
                 margin-top: 250px;
             }
@@ -376,7 +410,7 @@ section.portfolio {
             }
         }
         .description {
-           padding: 30px;
+           padding: 20px;
            padding-bottom: 40px;
            &:nth-child(odd), &:nth-child(even) {
                box-shadow: none;
@@ -396,6 +430,7 @@ section.portfolio {
 
 section.contact {
     @include flex(column, center, center);
+    text-align: center;
     a {
         text-decoration: none;
         color: $primary;
@@ -406,8 +441,11 @@ section.contact {
         justify-content: center;
         font-size: 3.5rem;
         margin-left: 10px;
+        margin-bottom: 50px;
     }
     .social {
+        @include flex(row, space-between, center);
+        width: 300px;
         svg {
             font-size: 5.3rem;
             color: $primary;
@@ -416,4 +454,14 @@ section.contact {
             }
         }
     }
+}
+
+//------------------------//
+//  Footer Styling        
+//------------------------//
+
+footer {
+    background-color: $primary;
+    color: white;
+    text-align: center;
 }
