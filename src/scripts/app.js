@@ -16,9 +16,10 @@ app.init = () => {
 app.eventListener = () => {
     app.windowResize();
     $(".hamburger").on("click", () => {
-        $(".hamburger").toggleClass("is-active")
-        console.log('hi');
-        
+        $(".hamburger")
+            .toggleClass("is-active")
+        $(".navBar")
+            .toggleClass("isOpen");
     });
 }
 
@@ -113,7 +114,7 @@ app.generateGrid = () => {
     const winWidth = $(window).width();
     const winHeight = $(window).height();
     
-    const gridWidth = 80;
+    const gridWidth = 60;
     const gridHeight = gridWidth;
 
     const numCols = Math.floor(winWidth / gridWidth);

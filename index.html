@@ -10,20 +10,29 @@
     <title>Ricky Law - Front-End Web Developer</title>
 </head>
 <body>
+    <nav class="navBar mobile">
+        <ul>
+            <a href="#home"><li>Home</li></a>
+            <a href="#about"><li>About</li></a>
+            <a href="#skills"><li>Skills</li></a>
+            <a href="#portfolio"><li>Portfolio</li></a>
+            <a href="#contact"><li>Contact</li></a>
+        </ul>
+    </nav>
+    <div class="hamburger hamburger--spring">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div> 
     
-    <header>
-        <div class="hamburger hamburger--3dx">
-            <div class="hamburger-box">
-                <div class="hamburger-inner"></div>
-            </div>
-        </div> 
+    <header id="home">
         <nav class="navBar">
             <ul>
-                <a href=""><li>Home</li></a>
-                <a href=""><li>About</li></a>
-                <a href=""><li>Skills</li></a>
-                <a href=""><li>Portfolio</li></a>
-                <a href=""><li>Contact</li></a>
+                <a href="#home"><li>Home</li></a>
+                <a href="#about"><li>About</li></a>
+                <a href="#skills"><li>Skills</li></a>
+                <a href="#portfolio"><li>Portfolio</li></a>
+                <a href="#contact"><li>Contact</li></a>
             </ul>
         </nav>
         <div class="title">
@@ -39,7 +48,7 @@
     </header>
     
     <main>
-        <section class="about">
+        <section class="about" id="about">
             <div class="wrapper">
                     <figure>
                             <img src="assets/headshot2.png" alt="">
@@ -54,7 +63,7 @@
             </div>
         </section>
     
-        <section class="skills">
+        <section class="skills" id="skills">
             <h2>Skills</h2>
             <div class="container wrapper">
                 <figure>
@@ -104,8 +113,8 @@
             </div>
         </section>
     
-        <section class="portfolio" id="portfolio">
-            <h2>Portfolio</h2>
+        <section class="portfolio">
+            <h2 id="portfolio">Portfolio</h2>
             <div class="wrapper">
             	<div class="project project1">
             	    <div class="preview">
@@ -235,12 +244,10 @@
             	</div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <h2>Get in Touch</h2>
             <div class="email">
-                <!-- <h3>Email me:</h3> -->
                 <a href="">
-                        <!-- <i class="far fa-envelope"></i>  -->
                         <p>Email me: ricky@rickylaw.ca</p>
                 </a>
             </div>

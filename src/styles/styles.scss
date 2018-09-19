@@ -33,6 +33,60 @@ img {
 a {
     text-decoration: none;
 }
+
+// NavBar
+.navBar {
+    // position: absolute;
+    z-index: 10;
+    // left: 50%;
+    // top: 27%;
+    // transform: translateX(-50%);
+    // left: -55px;
+    transition: 0.3s;   
+    &.mobile {
+        position: fixed;
+        top: 0;
+        left: -50%;
+        display: none;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+    li {
+        padding: 0 10px;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $accent;
+        text-transform: uppercase;
+        &:hover {
+            color: $primary;
+        }
+    }
+    &.isOpen {
+        left: 0;
+    }
+}
+.hamburger {        
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: $accent;
+    background: rgba(245, 245, 245, 0.836);
+    border-radius: 7px;
+    border: 5px solid white;
+    &:hover {
+        // background-color: rgb(23, 40, 73);
+    }
+}
+
+.is-active {
+    background: transparent;
+    border: 5px solid transparent;
+}
+
 //------------------------//
 //  Header Styling        
 //------------------------//
@@ -45,27 +99,6 @@ header {
     border-radius: 15%;
     padding: 5%;
     // background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../assets/hero.jpg);
-    .hamburger {        
-        position: fixed;
-        top: 0;
-        right: 0;
-        color: $accent;
-    }
-    nav {
-        position: relative;
-        // left: -55px;
-        ul {
-            list-style-type: none;
-            display: flex;
-        }
-        li {
-            padding: 0 10px;
-            font-size: 2rem;
-            font-weight: 600;
-            color: $accent;
-            text-transform: uppercase;
-        }
-    }
     .title {
         background-color: rgba(0, 98, 255, 0.842);
         // border-radius: 20px;
@@ -145,10 +178,26 @@ header {
             font-size: 2.3rem;
         }
         nav {
-            position: fixed;
-            top: 15px;
-            right: 60px;
+            display: none;
+           
         }
+    }
+    .navBar.mobile {
+        display: block;  
+        background-color: rgba(69, 77, 95, 0.938);
+        height: 100vh;
+        width: 50%;
+        ul {
+            margin-top: 80px;
+            flex-direction: column;
+        }
+        li {
+            padding: 10px 20px;
+            color: white;
+        }
+      }
+    .hamburger {
+        display: block;
     }
 }
 
@@ -214,8 +263,8 @@ section.about {
             padding-left: 20px;
         }
     }
-
 }
+
 
 //------------------------//
 //  Skills Styling        
@@ -413,6 +462,7 @@ section.portfolio {
         padding-left: 10px;
         padding-right: 10px;
         h2 {
+            font-size: 7rem;
             padding-left: 10px;
             padding-right: 10px;
         }
@@ -427,7 +477,7 @@ section.portfolio {
         }
         .preview {
             position: absolute;
-            top: -3px;
+            top: -4px;
             transform: translateY(-100%);
             width: 100%;
             margin-bottom: 20px;
@@ -448,14 +498,24 @@ section.portfolio {
             }
         }
         .description {
-           padding: 20px;
-           padding-bottom: 40px;
-           &:nth-child(odd), &:nth-child(even) {
-               box-shadow: none;
-           }
-           box-shadow: none;
+            padding: 20px;
+            padding-bottom: 30px;
+            box-shadow: none;
+            &:nth-child(odd), &:nth-child(even) {
+                box-shadow: none;
+            }
+            &:nth-child(odd) {
+                border-top-left-radius: 40px;
+            }
+            &:nth-child(even) {
+                border-bottom-left-radius: 40px;
+            }
             .links a {
                 margin-top: 10px;
+            }
+            .tool {
+                padding: 8px;
+                font-size: 1.7rem;
             }
         }
     }
@@ -463,6 +523,7 @@ section.portfolio {
 @media (max-width: 450px) {
     section.portfolio  {
         h2 {
+            font-size: 5.6rem;
             margin-bottom: 0;
         }
         .project {
