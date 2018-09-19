@@ -8,13 +8,18 @@ app.init = () => {
     app.eventListener();
     app.generateGrid();
     
-    if ($(window).width() > 1280) {
+    if ($(window).width() > 1000) {
         app.gameTimer();   
     }
 }
 
 app.eventListener = () => {
     app.windowResize();
+    $(".hamburger").on("click", () => {
+        $(".hamburger").toggleClass("is-active")
+        console.log('hi');
+        
+    });
 }
 
 app.windowResize = () => {
