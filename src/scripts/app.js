@@ -17,7 +17,7 @@ app.eventListener = () => {
     app.windowResize();
     $(".hamburger").on("click", () => {
         $(".hamburger").toggleClass("is-active")
-        console.log('hi');
+        $("")
         
     });
 }
