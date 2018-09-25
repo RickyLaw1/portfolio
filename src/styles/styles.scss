@@ -98,10 +98,8 @@ header {
     background-size: cover;
     border-radius: 15%;
     padding: 5%;
-    // background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../../assets/hero.jpg);
     .title {
         background-color: rgba(0, 98, 255, 0.842);
-        // border-radius: 20px;
         padding: 15px;
         text-align: center;
         box-shadow: 3px 3px 0px 0 rgb(53, 53, 53);
@@ -112,7 +110,6 @@ header {
         color: white;
         font-weight: 400;
         font-size: 3rem;
-        // text-shadow: 1px 1px 1px #000;
     }
     button.goToProjects {
         font-size: 3rem;        
@@ -273,7 +270,6 @@ section.about {
 section.skills {
     background-color: $secondary;
     text-align: center;
-    // border-radius: 5%;
     @include flex(column, center, center, wrap);
 
     h2 {
@@ -368,7 +364,6 @@ section.portfolio {
             box-shadow: -30px 30px 0px #08152D;
             border-top-left-radius: 70px;
             border-bottom-right-radius: 70px;
-            // margin-left: 30px;
         }
         p {
             color: $primary;
@@ -378,7 +373,6 @@ section.portfolio {
         .tool {
             font-size: 2rem;
             color: $primary;
-            // border: 1px solid $primary;
             background-color: white;
             border-radius: 5px;
             display: inline-block;
@@ -418,7 +412,6 @@ section.portfolio {
         position: relative;
         overflow: hidden;
         .staticImage {
-            // visibility: hidden;
             position: relative;
         }
         .macBook {
@@ -433,7 +426,6 @@ section.portfolio {
             z-index: 1;
             top: 17px;
             left: 58px;
-            // display: none;
         }
         &:nth-child(even) {
             margin-left: 50px;
@@ -488,7 +480,6 @@ section.portfolio {
                 z-index: 1;
                 top: 17px;
                 left: 58px;
-                // display: none;
             }
             &:nth-child(odd) {
                 margin-right: 0;
@@ -533,7 +524,6 @@ section.portfolio {
 }
 
 
-
 //------------------------//
 //  Contact Styling        
 //------------------------//
@@ -549,9 +539,23 @@ section.contact {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 3.5rem;
+        font-size: 3.3rem;
         margin-left: 10px;
-        margin-bottom: 50px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .emailMe {
+        font-size: 2rem;
+        border: 1px solid $primary;
+        border-radius: 7px;
+        padding: 10px;
+        
+        background-color: $primary;
+        color: #e3edff;
+        &:hover {
+            background-color: #e3edff;
+            color: $primary;
+        }
     }
     .social {
         @include flex(row, space-between, center);
